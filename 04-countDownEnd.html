@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<script src="jquery1.7.1.js"></script>
+<style type="text/css">
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select{margin:0;padding:0;}
+body{font:12px "宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;color:#057142;background:#FFFFFF;line-height:1.8;}
+a{text-decoration:none;color:#057142;;}
+a:hover{color:#C0471B;}
+em{font-style:normal;}
+li{list-style:none;}
+img{border:0;vertical-align:middle;}
+/* clearfix */  
+.clearfix:after{ visibility: hidden;display: block;font-size: 0;content:" ";clear: both;height: 0;}
+.clearfix{ *zoom:1;}
+
+.remaining{ line-height:30px; font-size:14px; position:absolute; left:115px; top:3px; color:#666;}
+.remaining .num{ background:url(http://r.360img.cn/images/common/icon_index.png) no-repeat;}
+
+.remaining .num{ display:inline-block; width:30px; text-align:center; background-position:-288px -2px; font-size:20px; font-family:Arial; color:#fff; margin:0 6px 0 4px;}
+
+</style>
+
+<div class="remaining" startime="2016/07/09 00:00:00" endtime="2016/08/10 00:00:00">
+	<p class="end_span"><i class="time_tit">活动已结束：</i><span class="num">00</span><em>时</em><span class="num">00</span><em>分</em><span class="num">00</span>秒</p>
+</div>
+<script type="text/javascript">
+/**
+ * countDown version: 0.2
+ * @Author   zhangkai
+ * @DateTime 20160718 14:28
+ * 增加结束时间
+ */
+//倒计时动画
+timerHtml = $(".remaining");
+var totleTime = 0;
+var nowTime = new Date().getTime();
+var beginTime = +new Date(timerHtml.attr('startime'));
+var endTime = +new Date(timerHtml.attr('endtime'));
+var textTime = ["距离活动开始","活动结束"];
+// alert(endTime);
+var stopInterval = 0;
+var refresh = function () {
+		if(nowTime<beginTime){
+			totleTime = beginTime - nowTime;
+			timetext = textTime[0];
+		}else if(nowTime>beginTime && nowTime<endTime){
+			totleTime = endTime - nowTime;
+			timetext = textTime[1];
+		}else{
+			return;
+		}
+		totleTime = Math.round(totleTime / 1000);
+		var day = Math.floor(totleTime / 3600 / 24);
+		var hour = Math.floor((totleTime - day * 3600 * 24)/3600);
+		var min = Math.floor((totleTime - day * 3600 * 24 - hour * 3600) / 60);
+		var sec = totleTime - day * 3600 * 24 - hour * 3600 - min * 60;
+		nowTime += 1000;
+		timerHtml.html('<i class="time_tit">' + timetext + '：</i><span class="num">' + day + '</span><em>天</em><span class="num">' + hour + '</span><em>时</em><span class="num">' + min + '</span><em>分</em><span class="num">' + sec + '</span>秒');
+		//退出循环
+		return;
+	//}
+	clearInterval(stopInterval);
+	
+};
+refresh();
+
+setInterval(refresh,1000);
+</script>
+</body>
+</html>

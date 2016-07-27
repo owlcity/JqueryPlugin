@@ -1,0 +1,251 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<script src="jquery1.7.1.js"></script>
+<style type="text/css">
+body,dd,dl,fieldset,form,h1,h2,h3,h4,h5,h6,input,legend,ol,p,select,td,textarea,th,ul{margin:0;padding:0}
+body{font:12px "宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;color:#057142;background:#FFF;line-height:1.8}
+a{text-decoration:none;color:#057142}
+a:hover{color:#C0471B}
+em{font-style:normal}
+li{list-style:none}
+img{border:0;vertical-align:middle}
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.img-hover a img{transition:all linear .4s;-moz-transition:all linear .4s;-ms-transition:all linear .4s;-o-transition:all linear .4s;-webkit-transition:all linear .4s}
+.img-hover a img:hover{transform:scale(1.06);-webkit-transform:scale(1.06);-moz-transform:scale(1.06);-o-transform:scale(1.06);-ms-transform:scale(1.06)}
+.pic-show{position:relative;width:640px;height:335px}
+.pic-box{float:left;position:relative;width:640px;height:300px;overflow:hidden}
+.pic-box .pic-a{position:absolute;width:640px;height:300px;display:none}
+.pic-box #pic-1st{display:block}
+.pic-box .pic-a span{background-size:640px 300px!important}
+.pic-box a img{width:100%;height:100%}
+.p-box{float:left;padding:12px 5px 0 10px;width:395px;height:22px}
+.p-box p{position:absolute;width:395px;height:22px;overflow:hidden;background-color:#fff;line-height:22px;display:none}
+.p-box .p-1st{display:block}
+.p-box p a{font-size:16px;color:#999}
+.p-box p span{padding-left:6px}
+.p-box p span a{color:#333}
+.btn{float:right;display:inline;margin-top:13px;margin-right:35px}
+.btn li{float:left;margin-right:8px;width:10px;height:10px;border-radius:50%;background:#525252;cursor:pointer}
+.btn li.change-color{background:#09f}
+</style>
+
+<div class="pic-show clearfix">
+    <div class="pic-box">
+    <!--焦点图图片-->
+        <!--图片640*300-->
+        <a id="pic-1st" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jk/3o/o5lz38-10ix.jpg" alt=""></a>
+        <!--图片640*300-->
+        <a id="pic-2nd" class="pic-a" href="" title=""><img src="http://club-img.kdslife.com/attach/1k0/jl/2u/o5nl6g-11c7.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-3rd" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jk/4t/o5mar3-13t3.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-4th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jl/41/o5nxpj-1476.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-5th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jk/m/o5l4ml-1zmh.gif"></a>
+        <!--图片640*300-->
+        <a id="pic-6th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/hf/34/o58utt-aez.jpg" ></a>
+        <!--图片640*300-->
+        <a id="pic-7th" class="pic-a" href="" title=".0版深度评测"><img src="http://img-cms.pchome.net/article/ipub/1k0/jl/2m/o5njdy-1oby.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-8th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jk/4a/o5m5km-bsg.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-9th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jk/2w/o5lreu-1jvm.jpg"></a>
+        <!--图片640*300-->
+        <a id="pic-10th" class="pic-a" href="" title=""><img src="http://img-cms.pchome.net/article/ipub/1k0/jl/2t/o5nl4j-13o6.jpg" ></a>
+    </div>
+    <div class="p-box a-hover">
+        <!--焦点图文字-->
+        <p class="p-1st"><span><a href="http://article.pchome.net/content-1941242.html" title="">1真正海量存储 西部数据3TB移动硬盘首测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">2轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">3轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">4轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">5轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">6轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">7轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">8轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">9轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+        <p><span><a href="http://article.pchome.net/content-1940564.html" title="">10轻与薄兼备 素可羽iPhone背夹电池评测</a></span></p>
+
+    </div>
+    <ul class="btn clearfix">
+        <li class="change-color"></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+//焦点图
+function toShowPic(pic,btn_ul,btn,json,pText){
+    //pic切换图片
+    //btn-ul切换按钮容器
+    //btn切换标签
+    //json "id" : width,height,effect
+    //pText切换文字
+    var isShow=false;
+    var i=-1,j,p=0;
+    var x, y, n, b;
+    var len=pic.length;
+    var len_btn=btn.length;
+    var wBox=pic.width();
+    var hBox=pic.height();
+    var a=len-len_btn;
+    if(a>0){
+        for(b=0;b<a;b++){
+            btn_ul.append("<li></li>")
+        }
+    }
+    if(a<0){
+        for(b=len;b<len_btn;b++){
+            btn.eq(b).remove();
+        }
+    }
+    for(j=0;j<len;j++){
+        var name=pic.eq(j).prop("id");
+        var spanW=wBox/json[name][0];   //itemWidth
+        var spanH=hBox/json[name][1];   //itemHeight
+        for(n=0;n<json[name][0]*json[name][1];n++){
+            $("<span></span>").appendTo(pic.eq(j));
+            pic.eq(j).children("span").width(spanW);
+            pic.eq(j).children("span").height(spanH);
+            var imgSrc=pic.eq(j).children("img").attr("src");
+            pic.eq(j).children("span").css({position: "absolute",background:'url('+imgSrc+')'});
+        }
+        if(json[name][0]==1){   //Y水平分割
+            for(y=0;y<json[name][1];y++){
+                x=0;    //left :计算span-left值
+                i++;    //top : 计算span-top值
+                pic.children("span").eq(i).css({left:spanW*x+"px",top:spanH*y+"px"});
+                pic.children("span").eq(i).css("background-position",100+"%"+y/(json[name][1]-1)*100+"%")
+            }
+        }
+        else if(json[name][1]==1){  //垂直分割
+            for(x=0;x<json[name][0];x++){
+                y=0;
+                i++;
+                pic.children("span").eq(i).css({left:spanW*x+"px",top:spanH*y+"px"});
+                pic.children("span").eq(i).css("background-position",x/(json[name][0]-1)*100+"%"+100+"%")
+            }
+        }
+        else {                  //貌似没什么用的样子
+            for(y=0;y<json[name][1];y++){
+                for(x=0;x<json[name][0];x++){
+                    i++;
+                    pic.children("span").eq(i).css({left:spanW*x+"px", top:spanH*y+"px"});
+                    pic.children("span").eq(i).css("background-position",x/(json[name][0]-1)*100+"%"+y/(json[name][1]-1)*100+"%");
+                }
+            }
+        }
+        pic.eq(j).children("img").remove();
+    }
+    // next()
+    var t=setInterval(next,5000);
+    function next(){
+        //默认i=-1  i切换图片的索引，p切换文字的索引
+        i=p;
+        if(i>len-1){i=0;}
+        p=i+1;
+        if(i==len-1){p=0}
+        show(p,i);
+    }
+    function show(p,i){
+        isShow=false;
+        pText.eq(p).css({display:"block"}).siblings().css({display:"none"});
+        btn_ul.find("li").eq(p).addClass("change-color").siblings().removeClass("change-color");
+        var name=pic.eq(i).prop("id");
+        pic.eq(i).css({zIndex:333,display:"block"});
+        pic.eq(p).css({zIndex:222,display:"block"});
+        pic.eq(p).children("span").css({display:"block"});
+        if(json[name][2]=="width"){
+            var w= pic.eq(i).children("span").width();
+            pic.eq(i).children("span").css({display:"block"}).stop(true,true).animate({width:"0px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",width:w+"px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+        }
+        if(json[name][2]=="height"){
+            var h= pic.eq(i).children("span").height();
+            pic.eq(i).children("span").css({display:"block"}).stop(true,true).animate({height:"0px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",height:h+"px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+        }
+        if(json[name][2]=="top"){
+            pic.eq(i).children("span:even").css({display:"block"}).stop(true,true).animate({top:hBox+"px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",top:"0px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+            pic.eq(i).children("span:odd").css({display:"block"}).stop(true,true).animate({top:-hBox+"px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",top:"0px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+        }
+        if(json[name][2]=="left"){
+            pic.eq(i).children("span:even").css({display:"block"}).stop(true,true).animate({left:wBox+"px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",left:"0px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+            pic.eq(i).children("span:odd").css({display:"block"}).stop(true,true).animate({left:-wBox+"px"},800,function(){
+                pic.eq(i).children("span").css({display:"none",left:"0px"});
+                pic.eq(i).css({display:"none"});
+                return isShow=true;
+            });
+
+        }
+    }
+    btn_ul.find("li").click(function(){
+        if(isShow){
+            i=$(".change-color").index();
+            p=$(this).index();
+            if(p==i){
+                if(p==0){return i=len-1; isShow=false;}
+                else {return i=p-1;isShow=false;}
+            }
+            else {
+                show(p,i);
+            }
+        }
+   return  isShow=false;
+    });
+    btn_ul.find("li").mousedown(function(){
+        clearInterval(t);
+    }).mouseup(function(){
+        t=setInterval(next,5000);
+    })
+}
+
+$(function(){
+    var pic=$(".pic-box .pic-a");
+    var btn_ul=$(".pic-show .btn");
+    var btn=$(".pic-show .btn li");
+    var pText=$(".p-box p");
+    var json={
+        "pic-1st": ["16","1","width"],
+        "pic-2nd": ["1","8","height"],
+        "pic-3rd": ["20","1","top"],
+        "pic-4th": ["1","12","left"],
+        "pic-5th": ["1","6","height"],
+        "pic-6th": ["16","1","width"],
+        "pic-7th": ["1","8","height"],
+        "pic-8th": ["20","1","top"],
+        "pic-9th": ["1","12","left"],
+        "pic-10th": ["1","7","height"]
+    };
+    toShowPic(pic,btn_ul,btn,json,pText);
+	
+});
+
+
+
+
+
+</script>
+</body>
+</html>

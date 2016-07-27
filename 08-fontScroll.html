@@ -1,0 +1,88 @@
+;
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<script src="jquery1.7.1.js"></script>
+<style type="text/css">
+*{margin:0;padding:0;}
+ul,li{list-style-type:none;}
+body{font:12px/180% Arial, Helvetica, sans-serif;}
+a{color:#333;text-decoration:none;}
+a:hover{color:#3366cc;text-decoration:underline;}
+.demopage{width:960px;margin:0 auto;}
+.demopage h2{font-size:14px;margin:20px 0;}
+/* scrollDiv */
+.scrollDiv{height:25px;/* 必要元素 */line-height:25px;border:#ccc 1px solid;overflow:hidden;/* 必要元素 */}
+.scrollDiv li{height:25px;padding-left:10px;overflow: hidden;}
+#s2,#s3{height:100px;width: 400px;margin-top: 100px;}
+</style>
+
+<div class="scrollDiv" id="s2">
+    <ul>
+        <li><a href="javascript:;">jquery 滚动条 Scrollbar 设置浏览器默认滚动条样式</a></li>
+        <li><a href="javascript:;">jquery 图片切换 switchable 带左右按钮控制分页索引图片切换</a></li>
+        <li><a href="javascript:;">jquery powerFloat万能浮动框提示插件 支持图片、文字、ajax异步加载、表单验证等</a></li>
+        <li><a href="javascript:;">jquery 弹出层插件 ThickBox 多功能弹出层插件支持图片、ajax、内嵌内容弹等</a></li>
+        <li><a href="javascript:;">jquery 表单美化 jquery tzCheckbox 复选框美化 自定义默认复选框</a></li>
+        <li><a href="javascript:;">jquery HTML5 幻灯片插件 用 Canvas 制作类似百叶窗拍摄快门摄影拍摄效果</a></li>
+        <li><a href="javascript:;">jquery 图片放大镜 图片类似放大镜效果鼠标滑过小图异步加载中图、大图</a></li>
+        <li><a href="javascript:;">jquery 图片幻灯片 点击小图显示大图异步加载 支持按钮播放</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+;
+/**
+ * scroll version 0.1
+ * @Author   zhangkai
+ * @DateTime 20160719 17:00
+ */
+(function($){
+    $.fn.scroll = function(options){
+        var scroller = {};
+        var configs = {
+            lines : 1,      //滚动数量
+            auto : true,    //是否自动滚动
+            speed : 400,    //滚动速度
+            space : 3000    //滚动时间
+        }
+        var opts = $.extend({},configs,options);
+        var obj = $(this);
+        scroller.timer = null;
+        scroller.ul = obj.find('ul');
+        scroller.itemHeight = scroller.ul.find('li').height();
+        scroller.fn = {
+            play : function(){
+                if(opts.auto){
+                    scroller.timer = setInterval(scroller.fn.move,opts.space);
+                }
+            },
+            stop : function(){
+                clearInterval(scroller.timer);
+            },
+            move : function(){
+                scroller.ul.animate({'marginTop':-opts.lines * scroller.itemHeight},opts.speed,function(){
+                    for(var i=0;i<opts.lines;i++){
+                        scroller.ul.find('li:first').appendTo(scroller.ul);
+                    }
+                    scroller.ul.css('marginTop',0);
+                });
+            },
+            init : function(){
+                scroller.fn.play();
+                obj.hover(scroller.fn.stop,scroller.fn.play);
+            }
+        }
+        scroller.fn.init();
+    }
+})(jQuery);
+
+$('.scrollDiv').scroll({
+    lines : 2,
+    space : 2000 
+})
+</script>
+</body>
+</html>

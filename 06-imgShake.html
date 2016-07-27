@@ -1,0 +1,94 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<script src="jquery1.7.1.js"></script>
+<style type="text/css">
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select{margin:0;padding:0;}
+body{font:12px "宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;color:#057142;background:#FFFFFF;line-height:1.8;}
+a{text-decoration:none;color:#057142;;}
+a:hover{color:#C0471B;}
+em{font-style:normal;}
+li{list-style:none;}
+img{border:0;vertical-align:middle;}
+
+/*视觉焦点*/
+#main_c5 .title_box .more a{margin:0 15px;}
+#vision1{height:635px;padding-top:15px;}
+#vision2{height:315px;padding-top:20px;}
+.vision_list{display:block;position:relative;}
+.vision_list li{display:block;position:absolute;top:0;left:0;}
+.vision_list li a{display:block;position:relative;overflow:hidden;}
+.vision_list li .mask em{display:block;font:14px/40px "微软雅黑";width:100%;height:40px;color:#fff;position:absolute;bottom:0;left:0;text-align:center;}
+.vision_list .v_a,.vision_list .v_a a,.vision_list .v_a a img,.vision_list .v_a .mask{width:475px;height:315px;}
+.vision_list .v_b,.vision_list .v_b a,.vision_list .v_b a img,.vision_list .v_b .mask{width:360px;height:315px;}
+.vision_list .v_c,.vision_list .v_c a,.vision_list .v_c a img,.vision_list .v_c .mask{width:315px;height:155px;}
+.vision_list .v_d,.vision_list .v_d a,.vision_list .v_d a img,.vision_list .v_d .mask{width:155px;height:155px;}
+.vision_list .v_e,.vision_list .v_e a,.vision_list .v_e a img,.vision_list .v_e .mask{width:155px;height:315px;}
+.vision_list .v_f,.vision_list .v_f a,.vision_list .v_f a img,.vision_list .v_f .mask{width:200px;height:315px;}
+.vision_list .v1_1{}
+.vision_list .v1_2{top:0;left:480px;}
+.vision_list .v1_3{top:160px;left:480px;}
+.vision_list .v1_4{top:160px;left:640px;}
+.vision_list .v1_5{top:0;left:800px;}
+.vision_list .v_a a img{position:absolute;top:0;left:0;}
+.vision_list li a span.mask{display:block;position:absolute;bottom:0;left:0;background:url("http://mat1.gtimg.com/gamezone/2013inc/images/mask1.png") repeat-x scroll bottom center;height:45px!important;}
+</style>
+<ul class="vision_list">
+	<li class="v1_1 v_a"><a target="_blank" href="/a/20160615/002263.htm"><img name="page_cnt_6" src="http://img1.gtimg.com/gamezone/pics/hv1/45/60/2084/135527445.jpg" style="position: relative; top: 0px;"><span class="mask"><em>比原作还美！《最终幻想7》蒂法COS欣赏</em></span></a></li>
+    <li class="v1_2 v_c"><a target="_blank" href="/a/20160615/002542.htm"><img name="page_cnt_6" src="http://img1.gtimg.com/gamezone/pics/hv1/2/62/2084/135527912.jpg" style="position: relative;"><span class="mask"><em>揭秘主播一个月到底能挣多少 你真的想不到！</em></span></a></li>
+<li class="v1_3 v_d"><a target="_blank" href="/a/20160615/002871.htm"><img name="page_cnt_6" src="http://img1.gtimg.com/gamezone/pics/hv1/165/62/2084/135528075.jpg" style="position: relative; top: 0px;"><span class="mask"><em>海贼王最强的20个大招</em></span></a></li>
+<li class="v1_4 v_d"><a target="_blank" href="/a/20160601/000503.htm"><img name="page_cnt_6" src="http://img1.gtimg.com/gamezone/pics/hv1/190/181/2077/135103270.jpg" style="position: relative; top: 0px;"><span class="mask"><em>童年回忆都在这里！</em></span></a></li>
+<li class="v1_5 v_f"><a href="http://kaifu.qq.com/&#10;   " target="_blank"> <img name="page_cnt_6" src="http://img1.gtimg.com/gamezone/pics/hv1/178/145/1983/128981728.jpg " style="position: relative; top: 0px;"></a></li>
+</ul>
+<script type="text/javascript">
+/*Jump Pic*/
+function JumpObj(obj, range){
+	//图片鼠标移上去的动画效果
+	var maxTop = range = range || 6;
+	var drct = 0;
+	var step = 1;
+	init();
+
+	function init(){
+		obj.style.position = 'relative';
+		obj.onmouseover = function(e){
+			if(!drct)jump()
+		}  
+	}
+
+	function jump() {
+		var t = parseInt(obj.style.top);
+		if (!drct) motionStart();
+		else {
+			var nextTop = t - step * drct;
+			if (nextTop >= -maxTop && nextTop <= 0) obj.style.top = nextTop + 'px';
+			else if(nextTop < -maxTop) drct = -1;
+			else {
+				var nextMax = maxTop / 2;				
+				if (nextMax < 1) {motionOver();return;}
+				maxTop = nextMax;
+				drct = 1;
+			}
+		}
+		setTimeout(jump, 200 / (maxTop+3) + drct * 3);
+	}
+	function motionStart(){
+		obj.style.top='0';
+		drct = 1;
+	}
+	function motionOver(){
+		maxTop = range;
+		drct = 0;
+		obj.style.top = '0'; 
+	}
+}
+
+$(".vision_list li img").each(function (i, e) {
+		 JumpObj(e, 10);
+	});
+</script>
+</body>
+</html>

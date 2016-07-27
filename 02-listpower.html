@@ -1,0 +1,203 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+<script src="jquery1.7.1.js"></script>
+<style type="text/css">
+body, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea, select{margin:0;padding:0;}
+body{font:12px "宋体","Arial Narrow",HELVETICA;-webkit-text-size-adjust:100%;color:#057142;background:#FFFFFF;line-height:1.8;}
+a{text-decoration:none;color:#057142;;}
+a:hover{color:#C0471B;}
+em{font-style:normal;}
+li{list-style:none;}
+img{border:0;vertical-align:middle;}
+
+#yjhd_list{width: 1000px;height:180px;position:relative;}
+#yjhd_list .focus_con{height:150px;width:1000px;overflow:hidden;position:absolute;top:20px;left:0;/*overflow-y: scroll; overflow-x: scroll; */}
+#yjhd_list ul{
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+}
+#yjhd_list li{display:block;float:left;width:250px;height:150px;text-align:center;}
+#yjhd_list li a{display:inline-block;width:225px;height:150px;position:relative;}
+#yjhd_list li a .mask{position:absolute;bottom:0;left:0;background:url("http://mat1.gtimg.com/gamezone/2013inc/images/mask.png") repeat-x scroll center -140px;width:225px;height:150px;cursor:pointer;}
+#yjhd_list li a .mask em{display:block;height:32px;text-align:center;width:100%;font:14px/32px "微软雅黑";color:#fff;position:absolute;bottom:0;left:0;}
+
+#yjhd_list .prevBtn,#yjhd_list .nextBtn{position:absolute;top:71px;display:block;height:42px;width:30px;z-index:20;background:url("http://mat1.gtimg.com/gamezone/2013inc/images/games_sprite.png") no-repeat scroll;}
+#yjhd_list .prevBtn{left:0;background-position:-1px -125px;}
+#yjhd_list .prevBtn{left:12px}
+#yjhd_list .nextBtn{right:0;background-position:-41px -125px;}
+#yjhd_list .nextBtn{right:13px}
+#yjhd_list .prevBtn:hover{background-position:-1px -177px;}
+#yjhd_list .nextBtn:hover{background-position:-41px -177px;}
+
+</style>
+<div id="yjhd_list">
+	<div class="focus_con">
+		<ul class="focus_list">
+        	<li class="focus_item"><a target="_blank" href="http://film.qq.com/topic/2016/summer201601.html?ptag=qqgames.lb  "><img src="http://img1.gtimg.com/gamezone/pics/hv1/135/4/2085/135578280.jpg" name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>开腾讯视频会员5折优惠活动 </em></span></a></li>
+            <li class="focus_item"><a target="_blank" href=" http://iwan.qq.com/ad/zzxy/games.htm"><img src="http://img1.gtimg.com/gamezone/pics/hv1/187/78/2080/135272077.jpg " name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>主宰西游 5888大礼包</em></span></a></li>
+            <li class="focus_item"><a target="_blank" href="http://iwan.qq.com/act/cf20160426/index.htm"><img src="http://img1.gtimg.com/gamezone/pics/hv1/43/186/2077/135104398.jpg" name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>CF双节大趴： 100%得Q币</em></span></a></li>
+            <li class="focus_item"><a target="_blank" href="http://iwan.qq.com/act/nz20160518/index.htm"><img src="http://img1.gtimg.com/gamezone/pics/hv1/230/153/2073/134836070.jpg" name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>逆战幸运玩家免费获炼狱双蝎</em></span></a></li>
+            <li class="focus_item"><a target="_blank" href="http://games.qq.com/zt2016/owpy/index.htm"><img src="http://img1.gtimg.com/gamezone/pics/hv1/179/54/2090/135916199.jpg" name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>喊小伙伴玩《守望先锋》赢周边</em></span></a></li>
+            <li class="focus_item"><a target="_blank" href="http://tkc.wan.com/?id=5390"><img src="http://img1.gtimg.com/gamezone/pics/hv1/234/191/2082/135430989.jpg" name="page_cnt_3" width="225" height="150" border="0"><span class="mask"><em>九州天空城  体验资格 </em></span></a></li>
+           
+        </ul>
+	</div>
+    <a href="javascript:;" class="prevBtn"></a>
+    <a href="javascript:;" class="nextBtn"></a>
+</div>
+
+
+<script type="text/javascript">
+;
+/**
+ * @version  0.2
+ * @Author   zhangkai
+ * @DateTime 20160712 15:37
+ * @description 增加切换按钮
+ */
+(function($,window,document,undefined){
+    $.fn.qqscroll = function(options){
+        var scroller = {};
+        var configs = {
+            effect : 'left',            //切换方向left,right,top,bottom
+            step : 1,                   //切换数量只对水平方向作用
+            conbox : '.focus_con',      //内容容器
+            conlist : '.focus_list',    //切换容器
+            conitem : '.focus_item',    //切换元素 class
+            prev : '.prevBtn',          //上一个
+            next : '.nextBtn',          //下一个
+            auto : true,                //是否自动切换
+            speed : 400,                //速度
+            space : 3000                //间隔时间
+        }
+        var opts            = $.extend({},configs,options); 
+        scroller.conbox     = $(this).find(opts.conbox);
+        scroller.conlist    = scroller.conbox.find(opts.conlist);
+        scroller.conitem    = scroller.conlist.find(opts.conitem);
+        scroller.itemSum    = scroller.conitem.length;
+        scroller.itemWidth  = scroller.conitem.width();
+        scroller.itemHeight = scroller.conitem.height();
+        scroller.prev       = $(this).find(opts.prev);
+        scroller.next       = $(this).find(opts.next);
+        scroller.timer      = null;
+        scroller.fn = {
+            play : function(){
+                if(opts.auto){
+                    scroller.timer = setInterval(function(){
+                        scroller.fn.goto(opts.effect);
+                    },opts.space)
+                }
+            },
+            stop : function(){
+                clearInterval(scroller.timer);
+            },
+            addControl : function(){
+                scroller.prev.bind("click",function(){
+                    scroller.fn.stop();
+                    scroller.fn.goto(scroller.prevVal);
+                })
+                scroller.next.bind("click",function(){
+                    scroller.fn.stop();
+                    scroller.fn.goto(scroller.nextVal);
+                })
+            },
+            removeControl : function(){
+                scroller.prev.unbind("click");
+                scroller.next.unbind("click");
+            },
+            goto : function(d){
+                switch(d){
+                    case 'left' :
+                    case 'top' :
+                        if(d == 'left'){
+                            if(scroller.conbox.scrollLeft()==0){
+                                scroller.conbox.scrollLeft(scroller.itemSum*scroller.itemWidth);
+                            }
+                            dis = scroller.conbox.scrollLeft() - (scroller.moveVal*opts.step);
+                            console.log("dis:"+dis + "scrollLeft" +scroller.conbox.scrollLeft())
+                            scroller.conbox.animate({'scrollLeft' : dis},opts.speed)
+                        }else{
+                          
+                           dis = scroller.conbox.scrollTop() - scroller.moveVal;
+                           if(dis <0){
+                                dis = scroller.conlist.height();
+                           }
+                            console.log("dis:"+dis + "scrollTop" +scroller.conbox.scrollTop())
+                            scroller.conbox.animate({'scrollTop' : dis},opts.speed)  
+                        }
+                        break;
+
+                    case 'right' :
+                    case 'bottom' :
+                        if(d == 'right'){
+                            dis = scroller.conbox.scrollLeft() + (scroller.moveVal*opts.step);
+
+                            console.log("dis:"+dis + "scrollLeft" +scroller.conbox.scrollLeft())
+                            scroller.conbox.animate({'scrollLeft' : dis},opts.speed,function(){
+                                if(scroller.conbox.scrollLeft()>=scroller.itemSum*scroller.itemWidth){
+                                    scroller.conbox.scrollLeft(0);
+                                }
+                            })
+                        }else{
+                            dis = scroller.conbox.scrollTop() + scroller.moveVal;
+                            if(dis>=scroller.conlist.height()){
+                                dis=0;
+                            }
+                            console.log("dis:"+dis + "scrollTop" +scroller.conbox.scrollTop())
+                            scroller.conbox.animate({'scrollTop' : dis},opts.speed)
+                        }
+                        break;
+                    scroller.conbox.queue(function(){
+                        scroller.fn.addControl();
+                        scroller.fn.play();
+                        $(this).dequeue();
+                    })
+                }
+            },
+            init : function(){
+                if(scroller.itemSum <=1 ){
+                    return;
+                }
+                scroller.conlist.append(scroller.conlist.html());
+
+                if(opts.effect == 'left' || opts.effect == 'right'){
+
+                    if(scroller.itemsSum*scroller.itemWidth <= scroller.conbox.outerWidth()){
+                        return;
+                    }
+                    scroller.conlist.width(scroller.itemWidth*scroller.itemSum*2);
+                    scroller.prevVal = 'right';
+                    scroller.nextVal = 'left';
+                    scroller.moveVal = scroller.itemWidth;
+                }else{
+                    if(scroller.itemSum*scroller.itemHeight <= scroller.conbox.outerHeight()){
+                        return;
+                    }
+
+                    scroller.prevVal = 'top';
+                    scroller.nextVal = 'bottom',
+                    scroller.moveVal = scroller.itemHeight;
+                }
+                scroller.fn.addControl();;
+                scroller.fn.play();
+                scroller.conbox.hover(scroller.fn.stop,scroller.fn.play);
+
+            }
+        }
+        scroller.fn.init();
+    }
+    
+})(jQuery,window,document);
+$("#yjhd_list").qqscroll({
+    effect : 'top',
+    step : 1
+});
+</script>
+</body>
+</html>
